@@ -148,3 +148,8 @@ body {
 form{
     display: flex;
 }
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    justify-content: space-between;
+}

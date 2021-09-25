@@ -1,3 +1,32 @@
+var dt = new Date();
+var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+$('#datey').append(time);
+
+
+
+$('#myform').on('submit',(e)=>{
+    e.preventDefault()
+    let usersTxt = $('#ourfeild').val();
+    createItem(usersTxt);
+})
+
+function createItem(text){
+    $('#todos').append(`<div class="d-flex align-items-center">
+                <label
+                  ><input type="checkbox" class="option-input radio" /><span
+                    class="label-text"
+                    >`+text+`</span
+                  ></label
+                >
+                <button type="button" class="btn btn-outline-warning" onclick='deleteitem(this)'>delete</button>
+              </div>`);
+              $("#ourfeild").val('');
+              $("#ourfeild").focus();
+}
+function deleteitem(element){
+  element.parentElement.remove()
+}
+
 $(document).ready(function() {
 $('input[type=checkbox]').change(function() {
 
@@ -9,27 +38,3 @@ $(this).next(".label-text").css("text-decoration-line", "none");
 
 });
 });
-
-var dt = new Date();
-var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-$('#datey').append(time);
-
-
-
-$('#myform').on('submit',(e)=>{
-    e.preventDefault()
-    let usersTxt = $('#ourfeild').val();
-    createItem(usersTxt)
-})
-
-
-function createItem(usersTxt){
-    $('#todos').append(`<div class="d-flex align-items-center">
-                <label
-                  ><input type="checkbox" class="option-input radio" /><span
-                    class="label-text"
-                    >`+usersTxt+`</span
-                  ></label
-                >
-              </div>`)
-}
