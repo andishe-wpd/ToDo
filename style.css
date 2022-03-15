@@ -88,7 +88,7 @@ body {
 }
 
 .option-input:checked {
-  background: red;
+  background: rgb(6, 211, 6);
 }
 
 .option-input:checked::before {
@@ -107,7 +107,7 @@ body {
   -webkit-animation: click-wave 0.25s;
   -moz-animation: click-wave 0.25s;
   animation: click-wave 0.25s;
-  background: red;
+  background: rgb(0, 255, 221);
   content: "";
   display: block;
   position: relative;

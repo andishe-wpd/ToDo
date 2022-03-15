@@ -7,7 +7,11 @@ $('#datey').append(time);
 $('#myform').on('submit',(e)=>{
     e.preventDefault()
     let usersTxt = $('#ourfeild').val();
-    createItem(usersTxt);
+    if(usersTxt == ''){
+      alert('fill it buddy')
+    }else{
+      createItem(usersTxt);
+    } 
 })
 
 function createItem(text){
